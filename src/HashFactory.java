@@ -1,21 +1,27 @@
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.TreeMap;
-
-import javax.naming.ldap.HasControls;
+import java.util.ArrayList;
 
 public class HashFactory {
+
+        public HashFactory(int i) {
+
+        }
     
-    public HashFactory(int i) {
+        public Map<String , ArrayList<String>> createMap(int i){
         
         switch (i) {
-            case 1: HashMap first;
+            case 1: HashMap<String, ArrayList<String>> first = new HashMap<>();
+                    return first;
+
+            case 2: TreeMap<String, ArrayList<String>> second = new TreeMap<>();
+                    return second;
                 
-            break;
-            
-            case 2: TreeMap second;
-            default:
-                break;
+            case 3: LinkedHashMap<String, ArrayList<String>> third = new LinkedHashMap<>();
+                    return third;
         }
+        return null;
     }
 }

@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class App {
@@ -19,11 +18,14 @@ public class App {
         int mapString = inputScanner.nextInt();
         
         HashFactory HashTable = new HashFactory(mapString);
-        
+
+        HashTable.createMap(mapString);
         
         boolean key = true;
         
-        while(key) {}
+        while(key) {
+
+        }
         inputScanner.close();
     }
 }
