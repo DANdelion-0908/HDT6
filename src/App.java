@@ -107,24 +107,44 @@ public class App {
 
                 break;
 
-                case 4: 
+                // Checking if the UserMap is empty. If it is empty, it will print a message saying
+                // that the UserMap is empty. If it is not empty, it will print a message saying that
+                // it is ordering the UserMap and then it will call the class Compare and pass the
+                // UserMap as a parameter.
+                case 4: if(UserMap.isEmpty()) {
+                    System.out.println("Su carrito está vacio.");
+                
+                } else {
+                    System.out.println("Ordenando... "); 
+                    new ProgressBar();
+                    System.out.println("");
+                    new Compare(UserMap);
+                }
 
                 break;
 
+                // Calling the method showMap from the class MapAdmin and passing the MyMap as a
+                // parameter.
                 // Calling the method showMap from the class MapAdmin and passing the MyMap as a
                 // parameter.
                 case 5: Admin.showMap(MyMap);
 
                 break;
 
-                case 6:
+                // Calling the method showMap from the class MapAdmin and passing the MyMap as a
+                // parameter.
+                case 6: System.out.println("Ordenando... "); 
+                        new ProgressBar();
+                        System.out.println("");
+                        
+                        new Compare(MyMap);
 
                 break; 
                 }
 
             // Catching an exception and printing a message.
             } catch(Exception e) {
-                System.out.println("Ingresa un dato válido.");
+                System.out.println("Ingresa un dato válido. \n");
             }
 
         }
