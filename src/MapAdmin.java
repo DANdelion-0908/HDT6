@@ -7,19 +7,25 @@ public class MapAdmin {
 
     }
 
-    public void add(Map<String, ArrayList<String>> m, String K, ArrayList<String> V, String S) throws Exception{
-
+    public void add(Map<String, ArrayList<String>> m, String K, String S) throws Exception{
+        
+        
         try {
             if(m.get(K) == null) {
+                ArrayList<String> V = new ArrayList<>();
+
                 V.add(S);
                 m.put(K, V);
-            
+                System.out.println(V + " ha sido ingresado dentro de la categoría " + K + "\n");
+                return;
+                
             } else {
                 m.get(K).add(S);
+                System.out.println(m.get(K) + " ha sido ingresado dentro de la categoría " + K + "\n");
+                return;
 
             }
     
-            System.out.println(V + " ha sido ingresado dentro de la categoría " + K + "\n");
             
         } catch (Exception e) {
             System.out.println("Ingresa un dato válido. \n");

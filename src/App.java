@@ -26,7 +26,9 @@ public class App {
 
         Map<String, ArrayList<String>> MyMap = HashTable.createMap(mapInt);
 
-        ArrayList<String> arrayList = new ArrayList<>();
+        Reader reader = new Reader();
+
+        reader.FileReader(MyMap);
         
         boolean key = true;
         
@@ -54,7 +56,7 @@ public class App {
                     String item = inputScanner3.nextLine();
                     System.out.println("");
 
-                    Admin.add(MyMap, cla, arrayList, item);
+                    Admin.add(MyMap, cla, item);
                     
                     break;
 
