@@ -6,10 +6,18 @@ import java.util.ArrayList;
 
 public class HashFactory {
 
+        // A constructor.
         public HashFactory(int i) {
 
         }
-    
+
+        /**
+         * It takes an integer as input and returns a map of type HashMap, TreeMap or LinkedHashMap
+         * depending on the integer value
+         * 
+         * @param i The type of map you want to create.
+         * @return A map of type String and ArrayList of type String.
+         */
         public Map<String , ArrayList<String>> createMap(int i){
         
         switch (i) {

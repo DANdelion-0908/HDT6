@@ -6,10 +6,17 @@ import java.io.FileReader;
 
 public class Reader {
     
+    /**
+     * It reads a file and stores the data in a map
+     * 
+     * @param map is the map that I'm using to store the data.
+     * @return A map with the key being the first word of the line and the value being the second word
+     * of the line.
+     */
     public Map FileReader(Map map) {
         String MyFile = "src/ListadoProducto.txt";
         String line = ""; 
-        Random rand = new Random();
+        new Random();
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(MyFile));

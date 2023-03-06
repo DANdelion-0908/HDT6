@@ -3,12 +3,19 @@ import java.util.Map;
 
 public class MapAdmin {
     
+    /**
+     * It adds a string to a map, but only if the string is in another map
+     * 
+     * @param m The map that contains the categories and the items.
+     * @param Inv The inventory map
+     * @param K Key
+     * @param S String
+     */
     public void add(Map<String, ArrayList<String>> m, Map<String, ArrayList<String>> Inv, String K, String S) throws Exception{
-        
-        
+           
         try {
             if(Inv.get(K) == null) {
-                System.out.println("La categoría " + K + " no existe.");
+                System.out.println("La categoría " + K + " no existe. \n");
                 return;
             }
 
@@ -21,7 +28,7 @@ public class MapAdmin {
             
                             V.add(S);
                             m.put(K, V);
-                            System.out.println(V + " ha sido ingresado dentro de la categoría " + K + "\n");
+                            System.out.println(V.get(V.size() - 1) + " ha sido ingresado dentro de la categoría " + K + "\n");
                             return;
                         }
                         
@@ -29,7 +36,7 @@ public class MapAdmin {
                         for (String value : Inv.get(Llave)) {
                             if(S.equals(value)) {
                                 m.get(K).add(S);
-                                System.out.println(m.get(K) + " ha sido ingresado dentro de la categoría " + K + "\n");
+                                System.out.println(m.get(K).get(m.get(K).size() - 1) + " ha sido ingresado dentro de la categoría " + K + "\n");
                                 return;
                             }    
                         }
@@ -37,15 +44,20 @@ public class MapAdmin {
                     }
             }
         
-    
-            
         } catch (Exception e) {
             System.out.println("Ingresa un dato válido. \n");
 
         }
     }
 
-
+    /**
+     * It removes an element from a list inside a map
+     * 
+     * @param m The map
+     * @param K Key
+     * @param V ArrayList of Strings
+     * @param S String to be removed
+     */
     public void remove(Map<String, ArrayList<String>> m, String K, ArrayList<String> V, String S) throws Exception{
 
         try {
@@ -64,6 +76,11 @@ public class MapAdmin {
         }
     }
 
+    /**
+     * It prints the key and the value of the map
+     * 
+     * @param m the map
+     */
     public void showMap(Map<String, ArrayList<String>> m) {
         for (String s : m.keySet()) {
 

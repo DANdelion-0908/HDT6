@@ -44,46 +44,54 @@ public class App {
             System.out.println("5. Mostrar todos los productos y categorías.");
             System.out.println("6. Mostrar todos los productos y categorías ordenados. \n");
 
-            System.out.print("Tu elección es: ");
-            int optInt = inputScanner.nextInt();
-            System.out.println("");
+            try {
+
+                System.out.print("Tu elección es: ");
+                int optInt = inputScanner.nextInt();
+                System.out.println("");
             
-            switch (optInt) {
-                case 1: 
-                    System.out.print("Ingresa la categoría en la que quieres añadir objetos: ");
-                    String cla = inputScanner2.nextLine();
-                    System.out.println("");
+                switch (optInt) {
+                    case 1: 
+                        // Asking the user to input a category and an item to add to that category.
+                        System.out.print("Ingresa la categoría en la que quieres añadir objetos: ");
+                        String cla = inputScanner2.nextLine();
+                        System.out.println("");
 
-                    System.out.print("Ingresa el objeto que vas a añadir a esa categoría: ");
-                    String item = inputScanner3.nextLine();
-                    System.out.println("");
+                        System.out.print("Ingresa el objeto que vas a añadir a esa categoría: ");
+                        String item = inputScanner3.nextLine();
+                        System.out.println("");
 
-                    Admin.add(UserMap, MyMap, cla, item);
+                        // Adding a new item to the UserMap.
+                        Admin.add(UserMap, MyMap, cla, item);
                     
-                    break;
+                        break;
 
-                case 2: 
-                    System.out.print("Ingresa el objeto sobre el que quieres saber su categoría: ");
-                    String pro = inputScanner4.nextLine();
-                    System.out.println("");
+                        case 2: 
+                        // Asking the user to input a product and then it is searching for that product in
+                        // the UserMap. If the product is found, it will print the category in which it is
+                        // found. If the product is not found, it will print a message saying that the
+                        // product does not exist.
+                        System.out.print("Ingresa el objeto sobre el que quieres saber su categoría: ");
+                        String pro = inputScanner4.nextLine();
+                        System.out.println("");
                     
-                    boolean crazy = true;
+                        boolean crazy = true;
 
-                    for (String llave : UserMap.keySet()) {
+                        for (String llave : UserMap.keySet()) {
 
-                        for (String string : UserMap.get(llave)) {
+                            for (String string : UserMap.get(llave)) {
                             
-                            if (string.equals(pro)) {
-                                System.out.println("El objeto " + pro + " se encuentra en la categoría " + llave + "\n");
+                                if (string.equals(pro)) {
+                                    System.out.println("El objeto " + pro + " se encuentra en la categoría " + llave + "\n");
 
-                                crazy = false;
+                                    crazy = false;
 
-                                break;
+                                    break;
 
-                            } else {
-                                continue;
+                                } else {
+                                    continue;
                                 
-                            }
+                                }
                         }
                     }
                     
@@ -93,6 +101,8 @@ public class App {
                     }
                 break;
 
+                // Calling the method showMap from the class MapAdmin and passing the UserMap as a
+                // parameter.
                 case 3: Admin.showMap(UserMap);
 
                 break;
@@ -101,6 +111,8 @@ public class App {
 
                 break;
 
+                // Calling the method showMap from the class MapAdmin and passing the MyMap as a
+                // parameter.
                 case 5: Admin.showMap(MyMap);
 
                 break;
@@ -108,8 +120,18 @@ public class App {
                 case 6:
 
                 break; 
+                }
+
+            // Catching an exception and printing a message.
+            } catch(Exception e) {
+                System.out.println("Ingresa un dato válido.");
             }
+
         }
+
         inputScanner.close();
+        inputScanner2.close();
+        inputScanner3.close();
+        inputScanner4.close();
     }
 }
