@@ -3,28 +3,40 @@ import java.util.Map;
 
 public class MapAdmin {
     
-    public MapAdmin(Map<String, ArrayList<String>> m) {
-
-    }
-
-    public void add(Map<String, ArrayList<String>> m, String K, String S) throws Exception{
+    public void add(Map<String, ArrayList<String>> m, Map<String, ArrayList<String>> Inv, String K, String S) throws Exception{
         
         
         try {
-            if(m.get(K) == null) {
-                ArrayList<String> V = new ArrayList<>();
-
-                V.add(S);
-                m.put(K, V);
-                System.out.println(V + " ha sido ingresado dentro de la categoría " + K + "\n");
+            if(Inv.get(K) == null) {
+                System.out.println("La categoría " + K + " no existe.");
                 return;
-                
-            } else {
-                m.get(K).add(S);
-                System.out.println(m.get(K) + " ha sido ingresado dentro de la categoría " + K + "\n");
-                return;
-
             }
+
+            for (String Llave : Inv.keySet()) {
+                    if(m.get(K) == null) {
+                        for (String value : Inv.get(Llave)) {
+                            if(S.equals(value));
+
+                            ArrayList<String> V = new ArrayList<>();
+            
+                            V.add(S);
+                            m.put(K, V);
+                            System.out.println(V + " ha sido ingresado dentro de la categoría " + K + "\n");
+                            return;
+                        }
+                        
+                    } else {
+                        for (String value : Inv.get(Llave)) {
+                            if(S.equals(value)) {
+                                m.get(K).add(S);
+                                System.out.println(m.get(K) + " ha sido ingresado dentro de la categoría " + K + "\n");
+                                return;
+                            }    
+                        }
+        
+                    }
+            }
+        
     
             
         } catch (Exception e) {
@@ -52,11 +64,11 @@ public class MapAdmin {
         }
     }
 
-    public String showMap(Map<String, ArrayList<String>> m, String K, ArrayList<String> V, String S) {
-        for (String string : V) {
-            System.out.println(string + ":" + m.get(K));
-        }
+    public void showMap(Map<String, ArrayList<String>> m) {
+        for (String s : m.keySet()) {
 
-        return null;
+            System.out.print("La categoría es " + s + ". " + "Sus productos son " + m.get(s) + "\n");
+            System.out.println("");
+        }
     }
 }

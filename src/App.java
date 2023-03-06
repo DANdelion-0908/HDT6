@@ -26,13 +26,15 @@ public class App {
 
         Map<String, ArrayList<String>> MyMap = HashTable.createMap(mapInt);
 
+        Map<String, ArrayList<String>> UserMap = HashTable.createMap(mapInt);
+
         Reader reader = new Reader();
 
         reader.FileReader(MyMap);
         
         boolean key = true;
         
-        MapAdmin Admin = new MapAdmin(MyMap);
+        MapAdmin Admin = new MapAdmin();
 
         while(key) {
             System.out.println("1. Agregar un producto.");
@@ -56,23 +58,23 @@ public class App {
                     String item = inputScanner3.nextLine();
                     System.out.println("");
 
-                    Admin.add(MyMap, cla, item);
+                    Admin.add(UserMap, MyMap, cla, item);
                     
                     break;
 
                 case 2: 
                     System.out.print("Ingresa el objeto sobre el que quieres saber su categoría: ");
-                    String cat = inputScanner4.nextLine();
+                    String pro = inputScanner4.nextLine();
                     System.out.println("");
                     
                     boolean crazy = true;
 
-                    for (String llave : MyMap.keySet()) {
+                    for (String llave : UserMap.keySet()) {
 
-                        for (String product : MyMap.get(llave)) {
+                        for (String string : UserMap.get(llave)) {
                             
-                            if (cat.equals(product)) {
-                                System.out.println("El objeto " + cat + " se encuentra en la categoría " + llave + "\n");
+                            if (string.equals(pro)) {
+                                System.out.println("El objeto " + pro + " se encuentra en la categoría " + llave + "\n");
 
                                 crazy = false;
 
@@ -92,6 +94,20 @@ public class App {
                 break;
 
                 case 3: 
+
+                break;
+
+                case 4: 
+
+                break;
+
+                case 5: Admin.showMap(MyMap);
+
+                break;
+
+                case 6:
+
+                break; 
             }
         }
         inputScanner.close();
