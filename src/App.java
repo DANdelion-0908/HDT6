@@ -44,7 +44,8 @@ public class App {
             System.out.println("3. Mostrar datos de un producto.");
             System.out.println("4. Mostrar datos de un producto ordenados.");
             System.out.println("5. Mostrar todos los productos y categorías.");
-            System.out.println("6. Mostrar todos los productos y categorías ordenados. \n");
+            System.out.println("6. Mostrar todos los productos y categorías ordenados.");
+            System.out.println("7. Salir. \n");
 
             try {
 
@@ -142,11 +143,16 @@ public class App {
                         new Compare(MyMap);
 
                 break; 
+
+                case 7:  System.out.println("Saliendo...");
+                
+                    return;
                 }
 
             // Catching an exception and printing a message.
             } catch(Exception e) {
                 System.out.println("Ingresa un dato válido. \n");
+                break;
             }
 
         }
