@@ -22,8 +22,8 @@ Carnes |	Pollo
 Carnes |	Cerdo
 Carnes |	Camarones
 Carnes |	Pescados
-Lácteos |	Queso de cabra
-Lácteos |	Queso Manchego 
-Lácteos |	Leche descremada
-Lácteos |	Leche deslactosada
-Lácteos |	Leche entera
+Lacteos |	Queso de cabra
+Lacteos |	Queso Manchego 
+Lacteos |	Leche descremada
+Lacteos |	Leche deslactosada
+Lacteos |	Leche entera

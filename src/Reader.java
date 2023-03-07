@@ -1,8 +1,10 @@
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.util.Map;
 import java.util.ArrayList;
 import java.util.Random;
 import java.io.FileReader;
+import java.io.InputStreamReader;
 
 public class Reader {
     
@@ -19,7 +21,7 @@ public class Reader {
         new Random();
 
         try {
-            BufferedReader reader = new BufferedReader(new FileReader(MyFile));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(MyFile), "UTF-8"));
             while((line = reader.readLine())!=null) {
 
                 String[] StrLine = line.split("\\|");

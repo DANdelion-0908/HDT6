@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -9,10 +11,10 @@ public class App {
         System.out.println("* Bienvenidos a Compras.com *");
         System.out.println("*****************************\n");
 
-        Scanner inputScanner = new Scanner(System.in);
-        Scanner inputScanner2 = new Scanner(System.in);
-        Scanner inputScanner3 = new Scanner(System.in);
-        Scanner inputScanner4 = new Scanner(System.in);
+        Scanner inputScanner = new Scanner(new InputStreamReader(System.in, "UTF-8"));
+        Scanner inputScanner2 = new Scanner(new InputStreamReader(System.in,"UTF-8"));
+        Scanner inputScanner3 = new Scanner(new InputStreamReader(System.in,"UTF-8"));
+        Scanner inputScanner4 = new Scanner(new InputStreamReader(System.in,"UTF-8"));
 
         System.out.println("Elige el tipo de MAP que se implemetará: ");
         System.out.println("1. HashMap.");
