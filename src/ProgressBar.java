@@ -5,7 +5,7 @@ public class ProgressBar {
     int progress = 0;
     int width = 50;
 
-    {
+    public ProgressBar() {
         
     // Actualiza la barra de carga
     while (progress < total) {
